@@ -29,7 +29,7 @@ export const Navbar = () => {
         <Left>
             <p>Tutorials</p>
             <p>Jobs</p>
-            <p>eduvation</p>
+            <p>Education</p>
         </Left>
         <Right>
             sign in
