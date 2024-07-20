@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
+    "@mui/icons-material": "^5.16.4",
     "@tinymce/tinymce-react": "^5.1.1",
     "appwrite": "^15.0.0",
     "html-react-parser": "^5.1.10",

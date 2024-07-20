@@ -6,23 +6,21 @@ import { useEffect, useState } from 'react';
 import appwriteService from '../Service/api/service';
 
 const Home = () => {
-  const [post, setPost] = useState(null);
-  useEffect(() => {
-        appwriteService.getPost('6693bedb002231508278').then((post) => {
-            if (post) setPost(post);
-            console.log("getPost", post);
-        });
-}, []);
+//   const [post, setPost] = useState(null);
+//   useEffect(() => {
+//         appwriteService.getPost('6693bedb002231508278').then((post) => {
+//             if (post) setPost(post);
+//             console.log("getPost", post);
+//         });
+// }, []);
   return (
     <div>
-        <Navbar/>
-        {/* <Postcards/> */}
-        <div>
+        {/* <div>
           {  post &&          
             parse(post?.content)
-          }
+          } */}
         </div>
-    </div>
+    // </div>
   )
 }
 
