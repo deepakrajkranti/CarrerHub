@@ -4,32 +4,22 @@ import Community from './Page/Community'
 import { 
   BrowserRouter as Router, 
   Routes, 
-  Route 
+  Route, 
+  Outlet
 } from "react-router-dom"; 
 import { useEffect } from 'react';
 import appwriteService from './Service/api/service';
 import { Post } from './Page/Post';
+import SinglePost from './Page/SinglePost';
+import { Navbar } from './Components/Navbar';
+import Footer from './Components/Footer';
 function App() {
-//   useEffect(() => {
-//     appwriteService.getPosts().then((posts) => {
-//         if (posts) {
-//             console.log("Appwrite service :: getPosts :: posts", posts);
-//         }
-//     })
-// }, [])
 
   return (
     <>
-      <Router> 
-        
-                <Routes> 
-                    <Route path="/" element={<Home/>} /> 
-                    <Route path="jobs" element ={<Post/>}/>
-                    <Route path="tutorials" element ={<Jobs/>}/>
-                    <Route path="community" element ={<Community/>}/>
-                </Routes> 
-      </Router>  
-      
+      <Navbar />
+        <Outlet />
+      <Footer />
   </>
   )
 }
