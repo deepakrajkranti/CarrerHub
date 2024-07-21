@@ -7,10 +7,10 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 
 const Container = styled.div`
 width: 100%;
+padding: 20px;
+text-aligned: center;
 bottom: 0;
 background-color: gray;
-// height: 10vw;
-padding:  10px;
 `
 
 const Content = styled.div`
@@ -18,18 +18,11 @@ margin: 0;
 display: flex;
 flex-direction: column;
 align-items: center;
-gap: 14px;
-font-size: 12px;
-max-height: 100%;
 `
 
 const Items = styled.div`
-display: flex;
-gap: 15px;
-`
-
-const PrivacyText = styled.div`
-// margin-top; 25px;
+text-size: 15px;
+padding: 2px;
 `
 
 function Footer() {
@@ -37,20 +30,14 @@ function Footer() {
     <Container>
         <Content>
             <Items>
-                <LinkedInIcon fontSize='large' /> 
-                <XIcon fontSize='large' />
-                <YouTubeIcon fontSize='large'/>
-                <FacebookIcon fontSize='large'/>
+                <LinkedInIcon />
             </Items>
             <Items>
-              <div>About Us</div>
-              <div>Privacy Policy</div>
-              <div>Contact Us</div>
-              <div>Terms</div>
+            XIcon
             </Items>
-            <PrivacyText>
-            ©2024 Careerhub. All contents are copywrite of their authors.
-            </PrivacyText>
+            <Items>
+                item 3
+            </Items>
         </Content>
     </Container>
   )
