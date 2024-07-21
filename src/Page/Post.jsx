@@ -5,6 +5,7 @@ import { useRef } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 import { ID } from 'appwrite';
 import conf from '../config'
+import { styled } from 'styled-components';
 
 export const Post = () => {
     const { register, handleSubmit, watch, setValue, control, getValues } = useForm();
@@ -52,11 +53,20 @@ export const Post = () => {
             }
         
     };
-  return (
-    <div>
+    const Container = styled.div`
+    height:100vh;
+    width:100vw;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    `
 
+   
+
+  return (
+    <Container>
         <form onSubmit={handleSubmit(submit)}>
-            <input type="text" {...register("title")} placeholder="Title" />
+            <input type="text" {...register("title")} placeholder="Title"  style={{height:"50px",border:"none",width:"100%", marginBottom:"10px",padding:"2px"}}/>
             {/* <input type="text" {...register("description")} placeholder="Description" /> */}
             <Editor
             label="Content :" name="content" 
@@ -98,6 +108,6 @@ export const Post = () => {
         </form>
   
        
-    </div>
+        </Container>
   )
 }

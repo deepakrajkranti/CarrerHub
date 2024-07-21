@@ -11,6 +11,7 @@ max-width: 100vw;
 display: flex;
 align-items: center;
 justify-content: center;
+//font-family: Arial, Helvetica, sans-serif;
 // text-align: center;
 box-sizing: border-box;
 overflow-x: hidden;

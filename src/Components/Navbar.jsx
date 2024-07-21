@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Container = styled.div`
-height:40px;
+height: 60px;
 color: black;
 font-size:1.2em;
 font-weight: bold;
-background-color: gray;
+//background-color: gray;
 box-sizing: border-box;
 overflow-x: hidden;
 `
