@@ -7,14 +7,6 @@ import appwriteService from '../Service/api/service';
 import styled from 'styled-components'
 import { Button } from '@mui/material';
 
-const Home = () => {
-//   const [post, setPost] = useState(null);
-//   useEffect(() => {
-//         appwriteService.getPost('6693bedb002231508278').then((post) => {
-//             if (post) setPost(post);
-//             console.log("getPost", post);
-//         });
-// }, []);
 const Parent =styled.div`
 display:flex;
 flex-direction:column;
@@ -94,6 +86,15 @@ display:flex;
 justify-content:center;
 align-items:center;
 `
+const Home = () => {
+//   const [post, setPost] = useState(null);
+//   useEffect(() => {
+//         appwriteService.getPost('6693bedb002231508278').then((post) => {
+//             if (post) setPost(post);
+//             console.log("getPost", post);
+//         });
+// }, []);
+
 
 
   return (
