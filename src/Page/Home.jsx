@@ -108,7 +108,7 @@ const Home = () => {
     </Left1>
     <Right1>
     <ImgContainer>
-    <Image src="../../public/assets/pic2.png" alt="pic2" />
+    <Image src="../../assets/pic2.png" alt="pic2" />
     </ImgContainer>     
      </Right1>      
       </ContainerTop>
@@ -118,10 +118,10 @@ const Home = () => {
         </Top2>
         <Bottom2>
           <Left2>
-        <Image src="../../public/assets/pic4.png" alt="pic2" />
+        <Image src="../../assets/pic4.png" alt="pic2" />
         </Left2>
         <Right2>
-        <Image src="../../public/assets/pic5.png" alt="pic2" />
+        <Image src="../../assets/pic5.png" alt="pic2" />
         </Right2>
         </Bottom2>
       </ContainerMiddle>

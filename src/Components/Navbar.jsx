@@ -53,7 +53,7 @@ export const Navbar = () => {
         <Container>
         <Navbardiv>
         <Left>
-            <Section><Link style={{color: "black"}} to="/jobs">Tutorials</Link></Section>
+            <Section><Link style={{color: "black"}} to="/">Home</Link></Section>
             <Section><Link style={{color: "black"}} to="/jobs">Jobs</Link></Section>
             <Section><Link style={{color: "black"}} to="/community">Community</Link></Section>
             <Section><Link style={{color: "black"}} to="/post"> Create</Link></Section>
