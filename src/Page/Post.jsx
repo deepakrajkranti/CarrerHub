@@ -6,10 +6,13 @@ import { Editor } from '@tinymce/tinymce-react';
 import { ID } from 'appwrite';
 import conf from '../config'
 import { styled } from 'styled-components';
+import { useNavigate } from 'react-router-dom'
+
 
 export const Post = () => {
     const { register, handleSubmit, watch, setValue, control, getValues } = useForm();
     const editorRef = useRef(null);
+    const navigate = useNavigate();
     const log1 = () => {
         // var post={};
       if (editorRef.current) {
@@ -50,6 +53,9 @@ export const Post = () => {
                 console.log("data", data);
                 const dbPost = await appwriteService.createPost({ ...data, slug:ID.unique(),status:'active', userId: '87968' });
                 console.log("dbPost", dbPost);
+                if (dbPost) {
+                  navigate(`/singlepost/${dbPost.$id}`);
+              }
             }
         
     };

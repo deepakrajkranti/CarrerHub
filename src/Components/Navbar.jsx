@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import CreateIcon from '@mui/icons-material/Create';
 
 const Container = styled.div`
 height: 60px;
 color: black;
 font-size:1.2em;
 font-weight: bold;
-//background-color: gray;
 box-sizing: border-box;
 overflow-x: hidden;
 `
@@ -53,14 +53,14 @@ export const Navbar = () => {
         <Container>
         <Navbardiv>
         <Left>
-            <Section><Link to="/jobs">Tutorials</Link></Section>
-            <Section><Link to="/jobs">Jobs</Link></Section>
-            <Section><Link to="/community">Community</Link></Section>
-            <Section><Link to="/community">Interview</Link></Section>
+            <Section><Link style={{color: "black"}} to="/jobs">Tutorials</Link></Section>
+            <Section><Link style={{color: "black"}} to="/jobs">Jobs</Link></Section>
+            <Section><Link style={{color: "black"}} to="/community">Community</Link></Section>
+            <Section><Link style={{color: "black"}} to="/post"> Create</Link></Section>
         </Left>
         <Right>
-        <Section><button><Link to="jobs">Sign-In</Link></button></Section>
-        <Section><button><Link to="jobs">Ask Question</Link></button></Section>
+        <Section><button><Link style={{color: "black"}} to="jobs">Sign-In</Link></button></Section>
+        <Section><button><Link style={{color: "black"}} to="jobs">Ask Question</Link></button></Section>
         </Right>
         </Navbardiv>
         </Container>
