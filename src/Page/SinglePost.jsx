@@ -54,9 +54,9 @@ function SinglePost() {
     appwriteService.getPost(id).then((post) => {
       post ? setPost(post) : console.log("Getting Error ==>", post)
     })
-    console.log(post)
   },[])
-
+  
+  {post && console.log(post.title)}
   return (
     <Container>
       <Content>
