@@ -83,9 +83,16 @@ const Community = () => {
   const[isLoading, setIsLoading] = useState(true) 
 
   useEffect(() => {
+    if(localStorage.getItem('posts')!==null) {
+       setPost(JSON.parse(localStorage.getItem('posts')))
+      }
+      else{
     appwriteService.getPosts().then((post) => {
       post ? setPost(post.documents) : console.log("error in  retrieving posts");
+      let string = JSON.stringify(post.documents)
+      localStorage.setItem('posts', string)
     })
+  }
   }, [])
 
   return (
