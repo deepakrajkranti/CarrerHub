@@ -2,17 +2,21 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import appwriteService from '../Service/api/service.js'
 import { useNavigate } from 'react-router-dom'
+import { Card } from '../Components/Card.jsx'
 
 const Container = styled.div`
-display:flex;
-align-items: center;
-justify-content: center;
 width: 100%;
 height: 100%;
 display: flex;
-padding: 10px; 
-margin: 10px;
-gap: 5px;
+
+`
+const Wrapper = styled.div`
+width: 100%;
+height: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
 `
 
 const LeftContainer = styled.div`
@@ -20,6 +24,7 @@ flex: 4;
 max-width: 100%;
 display: flex;
 flex-direction: column;
+
 `
 
 const RightContainer = styled.div`
@@ -30,8 +35,8 @@ max-width: 100%;
 const Post = styled.div`
 display: flex;
 flex-direction: column;
-justify-content: center;
-width: 100%;
+height:1054px;
+justify-content: space-evenly;
 `
 
 const PostTitle = styled.div`
@@ -85,20 +90,25 @@ const Community = () => {
 
   return (
     <Container >
-      <LeftContainer>
+    <Wrapper>
         <Post>
-        {post.map((element) => (
+        {/* {post.map((element) => (
               <OnePost key = {element.title} onClick={() => navigate(`/singlepost/${element.$id}`)}>
               <StyledDiv >
               <Title>{element.title}</Title>
               <Image src = {appwriteService.getFilePreview(element.featuredImage)} alt = {element.title} />
               </StyledDiv>
             </OnePost>
-          ))}
+          ))} */}
+          {
+            post.map((data,index)=>{
+              return(
+                <Card key ={index} data={data}/>
+              )
+            })
+          }
         </Post>
-      </LeftContainer>
-      <RightContainer>
-      </RightContainer>
+      </Wrapper>
     </Container>
   )
 }

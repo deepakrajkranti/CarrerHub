@@ -20,7 +20,6 @@ flex-direction: column;
 align-items: center;
 gap: 14px;
 font-size: 12px;
-max-height: 100%;
 `
 
 const Items = styled.div`

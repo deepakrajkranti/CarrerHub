@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import CreateIcon from '@mui/icons-material/Create';
+import { IoMdCreate } from "react-icons/io";
 
 const Container = styled.div`
 height: 60px;
@@ -14,7 +14,7 @@ overflow-x: hidden;
 
 const Navbardiv= styled.div`
 display:flex;
-height:100%;
+height:60px
 `
 
 const Left=styled.div`
@@ -56,11 +56,11 @@ export const Navbar = () => {
             <Section><Link style={{color: "black"}} to="/">Home</Link></Section>
             <Section><Link style={{color: "black"}} to="/jobs">Jobs</Link></Section>
             <Section><Link style={{color: "black"}} to="/community">Community</Link></Section>
-            <Section><Link style={{color: "black"}} to="/post"> Create</Link></Section>
+            <Section><Link style={{color: "black"}} to="/post"> <IoMdCreate style={ {fontSize: '20px'}} /> Create</Link></Section>
         </Left>
         <Right>
-        <Section><button><Link style={{color: "black"}} to="jobs">Sign-In</Link></button></Section>
-        <Section><button><Link style={{color: "black"}} to="jobs">Ask Question</Link></button></Section>
+        <Section><button><Link style={{color: "black"}} to="signin">Sign-In</Link></button></Section>
+        <Section><button><Link style={{color: "black"}} to="signin">Ask Question</Link></button></Section>
         </Right>
         </Navbardiv>
         </Container>
