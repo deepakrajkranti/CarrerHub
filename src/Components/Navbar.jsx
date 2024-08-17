@@ -59,8 +59,8 @@ export const Navbar = () => {
             <Section><Link style={{color: "black"}} to="/post"> <IoMdCreate style={ {fontSize: '20px'}} /> Create</Link></Section>
         </Left>
         <Right>
-        <Section><button><Link style={{color: "black"}} to="signin">Sign-In</Link></button></Section>
-        <Section><button><Link style={{color: "black"}} to="signin">Ask Question</Link></button></Section>
+        <Section><button><Link style={{color: "black"}} to="/login">Sign-In</Link></button></Section>
+        <Section><button><Link style={{color: "black"}} to="/signin">Ask Question</Link></button></Section>
         </Right>
         </Navbardiv>
         </Container>

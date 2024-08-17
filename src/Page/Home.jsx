@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import appwriteService from '../Service/api/service';
 import styled from 'styled-components'
 import { Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const Parent =styled.div`
 display:flex;
@@ -94,7 +95,7 @@ const Home = () => {
 //             console.log("getPost", post);
 //         });
 // }, []);
-
+const navigate = useNavigate()
 
 
   return (
@@ -104,7 +105,7 @@ const Home = () => {
     <Left1>
         <TopText>Unlock success with Writing through Blogs</TopText>
         <BootomText>Say goodbye to design and development hassles, and embrace effortless drag-and-drop landing page building with our robust, no-code landing page builder.. </BootomText>
-        <Button variant="contained" sx={{width:"40%",height:'40px',fontWeight:"bold",letterSpacing:"4px"}}>Start writing</Button>
+        <Button variant="contained" sx={{width:"40%",height:'40px',fontWeight:"bold",letterSpacing:"4px"}} onClick={()=>navigate('/signin')}>Start writing</Button>
     </Left1>
     <Right1>
     <ImgContainer>

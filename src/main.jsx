@@ -9,6 +9,7 @@ import Home from './Page/Home.jsx'
 import Jobs from './Page/Jobs.jsx'
 import { Post } from './Page/Post.jsx'
 import SignIn from './Page/SignIn.jsx'
+import Login from './Page/Login.jsx'
 
 const router = createBrowserRouter([
   {
@@ -35,11 +36,15 @@ const router = createBrowserRouter([
         path: "post",
         element: <Post />
       },
-      {
-        path: "signin",
-        element: <SignIn/>
-      }
-    ]
+    ],
+  },
+  {
+    path: "/signin",
+    element: <SignIn />
+  },
+  {
+    path: "/login",
+    element:<Login />
   }
 ])
 
