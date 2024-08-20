@@ -10,6 +10,8 @@ import Jobs from './Page/Jobs.jsx'
 import { Post } from './Page/Post.jsx'
 import SignIn from './Page/SignIn.jsx'
 import Login from './Page/Login.jsx'
+import { Provider } from 'react-redux'
+import store from './Store/store.js'
 
 const router = createBrowserRouter([
   {
@@ -51,6 +53,8 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     {/* <App /> */}
+    <Provider store={store}>
     <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>,
 )

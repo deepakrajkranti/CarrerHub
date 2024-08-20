@@ -6,6 +6,8 @@ import { useState } from 'react';
 import authService from '../Service/api/auth';
 import img from '/assets/pic4.png'
 import { FaLock, FaUser } from 'react-icons/fa6';
+import { login  as authlogin} from '../Store/authslice';
+import { useDispatch } from 'react-redux';
 
 const Container = styled.div`
 height: 100vh;
@@ -89,6 +91,7 @@ const DontAccount = styled.p`
 `
 function Login() {
     const navigate = useNavigate()
+    const dispatch = useDispatch()
     const [error, setError] = useState("")
     const { register, handleSubmit } = useForm()
 
@@ -99,6 +102,8 @@ function Login() {
             const session = await authService.login(data)
             if (session) {
                 const userData = await authService.getCurrentUser()
+                if(userData) { dispatch(authlogin({userData}));};
+                console.log("navigating")
                 navigate("/")
             }
         } catch (error) {

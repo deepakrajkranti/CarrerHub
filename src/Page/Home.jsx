@@ -7,6 +7,7 @@ import appwriteService from '../Service/api/service';
 import styled from 'styled-components'
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Parent =styled.div`
 display:flex;
@@ -96,6 +97,9 @@ const Home = () => {
 //         });
 // }, []);
 const navigate = useNavigate()
+const { status, userData } = useSelector((state) => state.auth);
+console.log("status",status)
+console.log("userData",userData)
 
 
   return (
