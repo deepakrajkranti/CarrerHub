@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom'
 import { useState } from 'react';
 import authService from '../Service/api/auth';
 import img from '/assets/back2.png'
+import { login  as authlogin} from '../Store/authslice';
+import { useDispatch } from 'react-redux';
 
 
 const Container = styled.div`
@@ -45,7 +47,7 @@ input{
   color: #fff; 
 }
 `
-const Button = styled.div`
+const Button = styled.button`
     width: 100%;
     height: 45px;
     background-color:white;
@@ -64,13 +66,14 @@ export default function SignIn() {
   const navigate = useNavigate()
   const [error, setError] = useState("")
   const { register, handleSubmit } = useForm()
+  const dispatch = useDispatch()
   const create = async(data) => {
     setError("")
     try {
         const userData = await authService.createAccount(data)
         if (userData) {
             const userData = await authService.getCurrentUser()
-            if(userData) dispatch(login(userData));
+            if(userData) dispatch(authlogin({userData}));
             navigate("/")
         }
     } catch (error) {
