@@ -21,6 +21,9 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
+@media (max-width: 768px) {
+  padding: 10px;
+}
 `
 
 const LeftContainer = styled.div`
@@ -39,9 +42,14 @@ max-width: 100%;
 const Post = styled.div`
 display: flex;
 flex-direction: column;
-height:1054px;
+
 // justify-content: space-evenly; // this is the working good for mobile view but on new page content is not coming good so i have to change it to space-between
 gap: 25px;
+@media (max-width: 768px) {
+  width: 100%;
+  padding: 10px;
+  gap: 15px;
+}
 `
 
 const PostTitle = styled.div`
@@ -53,6 +61,12 @@ img {
 max-width: 150px;
 height: 150px;
 object-fit: cover;
+
+@media (max-width: 768px) {
+  img {
+    max-width: 100px;
+    height: 100px;
+  }
 
 }
 `
@@ -72,6 +86,9 @@ padding: 10px;
 const StyledDiv = styled.div`
 display: flex;
 justify-content: space-between;
+@media (max-width: 768px) {
+  flex-direction: column;
+}
 `
 const Pagination = styled.div`
 width:
@@ -112,6 +129,12 @@ button {
     color: #6c757d;
     cursor: not-allowed;
   }
+  @media (max-width: 768px) {
+    button {
+      padding: 6px 12px;
+      font-size: 12px;
+      margin: 0 3px;
+    }
 `
 
 const LoadingContainer = styled.div`
