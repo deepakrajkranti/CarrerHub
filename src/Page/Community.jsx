@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import appwriteService from '../Service/api/service.js'
 import { useNavigate } from 'react-router-dom'
 import { Card } from '../Components/Card.jsx'
+import ReactLoading from 'react-loading';
 
 const Container = styled.div`
 width: 100%;
@@ -113,7 +114,13 @@ button {
   }
 `
 
-
+const LoadingContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;  /* Full viewport height */
+  width: 100vw;   /* Full viewport width */
+`;
 // const Title = ({ children }) => <PostTitle><h1>{children} </h1></PostTitle>;
 // const Image = ({src, alt}) => (
 //   <PostImage>
@@ -125,22 +132,23 @@ button {
 const Community = () => {
   const navigate = useNavigate()
   const[post, setPost] = useState([]);
-  const[isLoading, setIsLoading] = useState(true) 
   const [paginationNumbers, setPaginationNumbers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [loading, setLoading] = useState(false);
 
 
   const indexOfLastPost = currentPage * 6;
   const indexOfFirstPost = indexOfLastPost - 6;
   const currentPosts = post.slice(indexOfFirstPost, indexOfLastPost);
-
   useEffect(() => {
     if(localStorage.getItem('posts')!==null) {
        setPost(JSON.parse(localStorage.getItem('posts')))
       setPaginationNumbers(JSON.parse(localStorage.getItem('pageNumbers')))
       }
       else{
+        setLoading(true);
     appwriteService.getPosts().then((post) => {
+      setLoading(false);
       post ? setPost(post.documents) : console.log("error in  retrieving posts");
       const newPaginationNumbers = [];
       for (let i = 1; i <= Math.ceil(post.documents.length / 6); i++) {
@@ -157,6 +165,13 @@ const Community = () => {
   }, [])
   const handleclick = (e) => {
     setCurrentPage(Number(e.target.textContent));
+  }
+  if (loading) {
+    return (
+    <LoadingContainer>
+    <ReactLoading type={"spin"} color={"#3498db"} height={150} width={150} />
+   </LoadingContainer>
+    )
   }
 
   return (

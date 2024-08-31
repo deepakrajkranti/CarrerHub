@@ -7,6 +7,7 @@ import { FaHandsClapping } from "react-icons/fa6";
 import { FaMessage } from "react-icons/fa6";
 import { IoIosRemoveCircleOutline } from "react-icons/io";
 import { CiSaveDown2 } from "react-icons/ci";
+import ReactLoading from 'react-loading';
 
 const Container = styled.div`
   display: flex;
@@ -115,10 +116,17 @@ margin-top: 1.5rem;
 font-style: italic;
 font-family: Arial, Helvetica, sans-serif;
 `
-
+const LoadingContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;  /* Full viewport height */
+  width: 100vw;   /* Full viewport width */
+`;
 
 function SinglePost() {
-  const [post, setPost] = useState('')
+  const [post, setPost] = useState('');
+  const [loading, setLoading] = useState(false);
   const {id} = useParams();
 
   useEffect(() => {
@@ -126,7 +134,9 @@ function SinglePost() {
       setPost(JSON.parse(localStorage.getItem(id)))
     }
     else{
+    setLoading(true);
     appwriteService.getPost(id).then((post) => {
+      setLoading(false);
       post ? setPost(post) : console.log("Getting Error ==>", post);
       let string = JSON.stringify(post) 
       localStorage.setItem(id, string) 
@@ -135,7 +145,14 @@ function SinglePost() {
 
   },[])
   
-  // {post && console.log(post.title)}
+  if (loading) {
+    return (
+    <LoadingContainer>
+    <ReactLoading type={"spin"} color={"#3498db"} height={150} width={150} />
+   </LoadingContainer>
+    )
+  }
+
   return (
     <Container>
       <Content>
