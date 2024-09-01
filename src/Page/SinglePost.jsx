@@ -121,7 +121,6 @@ const LoadingContainer = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;  /* Full viewport height */
-  width: 100vw;   /* Full viewport width */
 `;
 
 function SinglePost() {

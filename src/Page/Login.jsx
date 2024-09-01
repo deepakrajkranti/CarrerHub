@@ -96,14 +96,14 @@ function Login() {
     const { register, handleSubmit } = useForm()
 
     const login = async(data) => {
-        console.log(data)
+        // console.log(data)
         setError("")
         try {
             const session = await authService.login(data)
             if (session) {
                 const userData = await authService.getCurrentUser()
                 if(userData) { dispatch(authlogin({userData}));};
-                console.log("navigating")
+                // console.log("navigating")
                 navigate("/")
             }
         } catch (error) {

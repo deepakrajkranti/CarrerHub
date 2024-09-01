@@ -17,6 +17,11 @@ flex-direction:column;
 const ContainerTop = styled.div`
 display:flex;
 height: 80vh;
+@media (max-width: 768px) {
+  flex-direction: column;
+  gap: 10px;
+  height:auto;
+}
 `
 const Left1 = styled.div`
 height: 100%;
@@ -24,6 +29,11 @@ flex:2;
 display:flex;
 flex-direction: column;
 padding: 4rem;
+@media (max-width: 768px) {
+  flex-direction: column;
+  gap: 10px;
+  height:auto;
+}
 `
 const TopText = styled.div`
 margin-top: 2rem;
@@ -40,25 +50,43 @@ font-size: 2rem;
 `
 const Right1 = styled.div`
 flex:3;
+display:flex;
+align-items: center;
+justify-content: center;
+@media (max-width: 768px) {
+  gap: 10px;
+
+}
 
 `
 const ImgContainer = styled.div`
-
-height: 100%;
 display: flex;
-align-items: center;
-justify-content: center;
+
+@media (max-width: 768px) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 `;
 const Image = styled.img`
-max-height: 90%;
-max-width: 100%;
+height:400px;
+width:400px;
 border-radius: 10px;
 object-fit: cover;
+@media (max-width: 768px) {
+  height: 325px;
+  width: 325px;
+}
 `;
+
 const ContainerMiddle =styled.div`
 display:flex;
 flex-direction:column;
-height:80vh;
+gap:10px;
+margin-bottom: 2rem;
+@media (max-width: 768px) {
+  gap: 10px;
+}
 `
 const Top2 =styled.div`
 height:20%;
@@ -69,10 +97,14 @@ flex:1;
 const Bottom2 =styled.div`
 height:80%;
 display:flex;
-// background-color:gray;
 align-items:center;
-max-width:100vw;
 flex:2;
+gap: 15px;
+@media (max-width: 768px) {
+  flex-direction: column;
+
+}
+
 `
 const Left2=styled.div`
 height:80%;
@@ -98,8 +130,8 @@ const Home = () => {
 // }, []);
 const navigate = useNavigate()
 const { status, userData } = useSelector((state) => state.auth);
-console.log("status",status)
-console.log("userData",userData)
+// console.log("status",status)
+// console.log("userData",userData)
 
 
   return (
@@ -108,7 +140,7 @@ console.log("userData",userData)
       <ContainerTop>
     <Left1>
         <TopText>Unlock success with Writing through Blogs</TopText>
-        <BootomText>Say goodbye to design and development hassles, and embrace effortless drag-and-drop landing page building with our robust, no-code landing page builder.. </BootomText>
+        <BootomText>Where Ideas Code, Papers Shape, and Discussions Drive Innovation. </BootomText>
         <Button variant="contained" sx={{width:"40%",height:'40px',fontWeight:"bold",letterSpacing:"4px"}} onClick={()=>navigate('/signin')}>Start writing</Button>
     </Left1>
     <Right1>
