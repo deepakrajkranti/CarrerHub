@@ -163,9 +163,9 @@ const Community = () => {
   const indexOfFirstPost = indexOfLastPost - 6;
   const currentPosts = post.slice(indexOfFirstPost, indexOfLastPost);
   useEffect(() => {
-    if(localStorage.getItem('posts')!==null) {
-       setPost(JSON.parse(localStorage.getItem('posts')))
-      setPaginationNumbers(JSON.parse(localStorage.getItem('pageNumbers')))
+    if(sessionStorage.getItem('posts')!==null) {
+       setPost(JSON.parse(sessionStorage.getItem('posts')))
+      setPaginationNumbers(JSON.parse(sessionStorage.getItem('pageNumbers')))
       }
       else{
         setLoading(true);
@@ -179,8 +179,8 @@ const Community = () => {
       setPaginationNumbers(newPaginationNumbers);
       let s1= JSON.stringify(newPaginationNumbers);
       let string = JSON.stringify(post.documents);
-      localStorage.setItem('pageNumbers', s1)
-      localStorage.setItem('posts', string)
+      sessionStorage.setItem('pageNumbers', s1)
+      sessionStorage.setItem('posts', string)
     }); 
   }
  

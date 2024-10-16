@@ -143,6 +143,7 @@ export const Post = () => {
                 data.content = editorRef.current.getContent();
                 console.log("data", data);
                 const dbPost = await appwriteService.createPost({ ...data, slug:ID.unique(),status:'active', userId: '87968' });
+                sessionStorage.clear();
                 console.log("dbPost", dbPost);
                 if (dbPost) {
                   navigate(`/singlepost/${dbPost.$id}`);
